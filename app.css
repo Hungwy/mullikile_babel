@@ -5,7 +5,7 @@ h1,h2 {
 .bubblecontainer {
     height: 100%;
     display: table;
-    margin: 50px;
+    margin: 0 auto;
     text-align: center;
     align-items: center;
     width: 75%;
