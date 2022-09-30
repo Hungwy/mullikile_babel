@@ -1,0 +1,32 @@
+h1,h2 {
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.bubblecontainer {
+    height: 100%;
+    display: table;
+    margin: 50px;
+    text-align: center;
+    align-items: center;
+    width: 75%;
+    justify-content: center;
+  }
+  
+  .bubble {
+    margin: 1px;
+    display: inline-block;
+    background-color: #68c5cc;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+  }
+  
+  .bubblepopped {
+    margin: 1px;
+    display: inline-block;
+    background-color: #c5cbce;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+  }
+  

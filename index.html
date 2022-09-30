@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mullikile babel script</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <div id="maincontainer"></div>
+</body>
+<script type="text/babel">
+    <input type="text">a</input>
+    function App(){
+        const playSound = () => new Audio("./sounds/bubble3.mp3").play();
+        const [count, newCount] = React.useState(4);
+        
+        /*function bubbleCount{
+            newCount(document.getElementById("mitu").value)
+        }*/
+        
+        
+        class BubbleContainer extends React.Component {
+            
+
+            render() {
+               //let count = 104; 
+              
+                
+                let bubbles = [];
+                for (let i = 0; i < count; i++) {
+                    bubbles.push(<Bubbles key={i}/>)
+
+                }
+
+                return (
+                    <div className="bubblecontainer">
+                        <h2>Mullikile</h2>
+                        <input type="number" id="mitu" min="1" max="999" value={count} onChange={(e) => newCount(e.target.value)}></input>
+                        <p>Sisesta mullide arv</p>
+                        {bubbles}
+                    </div>
+                )
+
+            }
+        }    
+        class Bubbles extends React.Component {
+            state = {
+                popped: false
+            }
+
+            handlePop = () => {
+                if (this.state.popped === false) {
+                    this.setState({
+                        popped: true
+                    })
+                }
+                playSound();
+            }
+
+            render() {
+                
+
+                if (this.state.popped === false) {
+                    return (
+                    <div className="bubble" onClick={() => this.handlePop()}></div>
+                    )
+                } else {
+                    return (
+                    <div className="bubblepopped"></div>
+                    )
+                } 
+            }
+        }
+        return <Bubbles />, <BubbleContainer />
+}
+
+
+
+
+
+    const root= ReactDOM.createRoot(document.getElementById("maincontainer"))
+    root.render(< App />);
+ </script>
+</html>
